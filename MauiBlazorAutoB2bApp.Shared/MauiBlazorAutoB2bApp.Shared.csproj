@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Configurations>Debug;Release;Debug-InteractiveWebAssembly;Debug-InteractiveAuto;Debug-InteractiveServer</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IL.Extensions.Configuration.Binder.NewtonsoftJson" Version="1.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.5" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.72.1" />
+    <PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="4.72.1" />
+    <PackageReference Include="Microsoft.Maui.Controls.Core" Version="9.0.51" />
+    <PackageReference Include="Microsoft.Maui.Essentials" Version="9.0.51" />
+  </ItemGroup>
+
+</Project>

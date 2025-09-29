@@ -1,0 +1,92 @@
+﻿@using System.Diagnostics
+@using MauiBlazorAutoB2bApp.Shared.Services
+@using Microsoft.Identity.Client
+@inject IAuthenticationService AuthenticationService
+@inject NavigationManager Nav
+@inject IJSRuntime JS
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await AuthenticationService.UpdateFromCache();
+
+        StateHasChanged();
+    }
+
+    private async Task ShowJsAlert()
+    {
+        // Pops up a standard browser/BlazorWebView alert
+        await JS.InvokeVoidAsync("alert", "Hello from JS alert!");
+    }
+
+    private async Task HandleSignUp()
+    {
+        await ShowJsAlert();
+    }
+
+    private async Task HandleSignIn()
+    {
+        try
+        {
+            AuthenticationResult result = await AuthenticationService.SignInAsync();
+
+            if (result != null)
+            {
+                Debug.WriteLine($"Access Token: {result.AccessToken}");
+                var now = DateTimeOffset.Now;
+                await JS.InvokeVoidAsync("alert", $"[{now:yyyy-MM-dd HH:mm:ss zzz}] Access Token: {result.AccessToken}");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("alert", "AuthenticationResult is null");
+            }
+        }
+        catch (Exception e)
+        {
+            await JS.InvokeVoidAsync("alert", "Exception");
+            Console.WriteLine(e);
+            throw;
+        }
+
+        StateHasChanged();
+    }
+
+    private async Task HandleSignOut()
+    {
+        await AuthenticationService.SignOutAsync();
+        StateHasChanged();
+    }
+}
+@if (!AuthenticationService.IsAuthenticated)
+{
+    <button class="btn btn-primary" @onclick="HandleSignIn">Sign in (via Service)</button>
+}
+else
+{
+    <button class="btn btn-secondary" @onclick="HandleSignOut">Sign out</button>
+}
+
+<div class="user-details mt-2" style="background-color: #333; color: #fff; padding: 10px; border-radius: 5px;">
+
+    @if (AuthenticationService.IsSignedIn && AuthenticationService.User is not null)
+{
+        Debug.WriteLine("Is signed in.");
+        <p><strong>User Details:</strong></p>
+        <p>Username: @AuthenticationService.User.Username</p>
+}
+    @if (AuthenticationService.IsAuthenticated && !string.IsNullOrEmpty(AuthenticationService.Token))
+    {
+        Debug.WriteLine($"Access Token: {AuthenticationService.Token}");
+        <p><strong>Access Token:</strong></p>
+        <p>Token: @AuthenticationService.Token</p>
+    }
+    else
+    {
+        if (AuthenticationService.IsSignedIn)
+        {
+            Debug.WriteLine("Is signed in.");
+            <p><strong>Access Token:</strong></p>
+            <p>Not Authenticated (Token Expired ?)</p>
+        }
+    }
+</div>

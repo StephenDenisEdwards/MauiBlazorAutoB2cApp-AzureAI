@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="stylesheet" href="_content/MauiBlazorAutoB2bApp.Shared/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="_content/MauiBlazorAutoB2bApp.Shared/app.css" />
+    <link rel="stylesheet" href="MauiBlazorAutoB2bApp.Web.styles.css" />
+    <link rel="icon" type="image/png" href="_content/MauiBlazorAutoB2bApp.Shared/favicon.png" />
+    @if (GetMode() == "INTERACTIVE_SERVER")
+    {
+        <HeadOutlet @rendermode="InteractiveServer" />
+    }
+    else if (GetMode() == "INTERACTIVE_WASM")
+    {
+        <HeadOutlet @rendermode="InteractiveWebAssembly" />
+    }
+    else if (GetMode() == "INTERACTIVE_AUTO")
+    {
+        <HeadOutlet @rendermode="InteractiveAuto" />
+    }
+
+</head>
+
+<body>
+
+    @if (GetMode() == "INTERACTIVE_SERVER")
+    {
+        <Routes @rendermode="InteractiveServer"/>
+    }
+        else if (GetMode() == "INTERACTIVE_WASM")
+    {
+        <Routes @rendermode="InteractiveWebAssembly" />
+    }
+        else if (GetMode() == "INTERACTIVE_AUTO")
+    {
+        <Routes @rendermode="InteractiveAuto" />
+    }
+
+<script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>
+@code {
+    string GetMode()
+    {
+#if INTERACTIVE_SERVER
+        return "INTERACTIVE_SERVER";
+#elif INTERACTIVE_WASM
+        return "INTERACTIVE_WASM";
+#elif INTERACTIVE_AUTO
+        return "INTERACTIVE_AUTO";
+#endif
+        return string.Empty;
+    }
+}
