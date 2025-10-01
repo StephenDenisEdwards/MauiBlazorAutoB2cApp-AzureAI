@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorAutoB2bApp", "MauiBlazorAutoB2bApp\MauiBlazorAutoB2bApp.csproj", "{E3338D37-FF50-4A34-96BD-2716ED93F1E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorAutoB2cApp", "MauiBlazorAutoB2cApp\MauiBlazorAutoB2cApp.csproj", "{E3338D37-FF50-4A34-96BD-2716ED93F1E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorAutoB2bApp.Shared", "MauiBlazorAutoB2bApp.Shared\MauiBlazorAutoB2bApp.Shared.csproj", "{1AA5F22B-62F8-414F-AE50-635E99EB3F76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorAutoB2cApp.Shared", "MauiBlazorAutoB2cApp.Shared\MauiBlazorAutoB2cApp.Shared.csproj", "{1AA5F22B-62F8-414F-AE50-635E99EB3F76}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorAutoB2bApp.Web", "MauiBlazorAutoB2bApp.Web\MauiBlazorAutoB2bApp.Web.csproj", "{C2800ABA-8C19-4553-A552-BFF679BEB039}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorAutoB2cApp.Web", "MauiBlazorAutoB2cApp.Web\MauiBlazorAutoB2cApp.Web.csproj", "{C2800ABA-8C19-4553-A552-BFF679BEB039}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorAutoB2bApp.Web.Client", "MauiBlazorAutoB2bApp.Web.Client\MauiBlazorAutoB2bApp.Web.Client.csproj", "{7C064C71-30BE-4D8D-9B68-E7249ED18FA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorAutoB2cApp.Web.Client", "MauiBlazorAutoB2cApp.Web.Client\MauiBlazorAutoB2cApp.Web.Client.csproj", "{7C064C71-30BE-4D8D-9B68-E7249ED18FA1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 	ProjectSection(SolutionItems) = preProject
@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiWeather", "WebApiWeat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MSAL-Tests", "MSAL-Tests", "{63B0D72C-FC43-4F44-A89A-0A30A1DBF08A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiBlazorAutoB2bApp.Shared.Tests", "MauiBlazorAutoB2bApp.Shared.Testss\MauiBlazorAutoB2bApp.Shared.Tests.csproj", "{B062DD67-9CEF-4C8F-AE2B-6649E49D2EA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiBlazorAutoB2cApp.Shared.Tests", "MauiBlazorAutoB2cApp.Shared.Testss\MauiBlazorAutoB2cApp.Shared.Tests.csproj", "{B062DD67-9CEF-4C8F-AE2B-6649E49D2EA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
