@@ -1,4 +1,3 @@
-using MauiBlazorAutoB2bApp.Shared.Services;
 using MauiBlazorAutoB2cApp.Shared.Services;
 using Microsoft.Maui.Devices.Sensors;
 

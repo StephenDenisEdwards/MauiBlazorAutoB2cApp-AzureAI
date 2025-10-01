@@ -1,10 +1,9 @@
-﻿using MauiBlazorAutoB2bApp.Shared.Services;
-using MauiBlazorAutoB2cApp.Shared.Services;
+﻿using MauiBlazorAutoB2cApp.Shared.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
 using Moq;
 
-namespace MauiBlazorAutoB2bApp.Shared.Tests
+namespace MauiBlazorAutoB2cApp.Shared.Tests
 {
 	public class AuthenticationServiceTests
 	{

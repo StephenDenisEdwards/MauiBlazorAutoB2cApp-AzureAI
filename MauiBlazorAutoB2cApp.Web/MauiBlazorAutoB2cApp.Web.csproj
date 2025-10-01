@@ -43,4 +43,9 @@
     <PackageReference Include="Microsoft.Authentication.WebAssembly.Msal" Version="9.0.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MauiBlazorAutoB2cApp.Shared\MauiBlazorAutoB2cApp.Shared.csproj" />
+    <ProjectReference Include="..\MauiBlazorAutoB2cApp.Web.Client\MauiBlazorAutoB2cApp.Web.Client.csproj" />
+  </ItemGroup>
+
 </Project>

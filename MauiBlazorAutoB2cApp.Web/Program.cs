@@ -1,13 +1,11 @@
-using MauiBlazorAutoB2bApp;
-using MauiBlazorAutoB2cApp.Web.Components;
-using MauiBlazorAutoB2bApp.Shared.Services;
 using MauiBlazorAutoB2bApp.Web;
 using MauiBlazorAutoB2bApp.Web.Services;
+using MauiBlazorAutoB2cApp;
 using MauiBlazorAutoB2cApp.Shared.Services;
+using MauiBlazorAutoB2cApp.Web.Components;
 using MauiBlazorAutoB2cApp.Web.Services;
 using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Abstractions;
-using Microsoft.Maui.Controls;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -153,8 +151,8 @@ app.MapRazorComponents<App>()
 	.AddInteractiveServerRenderMode()  // <-- comment out for WASM only
 	.AddInteractiveWebAssemblyRenderMode()  // <-- comment out for SERVER only
 	.AddAdditionalAssemblies(
-		typeof(MauiBlazorAutoB2bApp.Shared._Imports).Assembly,
-		typeof(MauiBlazorAutoB2bApp.Web.Client._Imports).Assembly);
+		typeof(MauiBlazorAutoB2cApp.Shared._Imports).Assembly,
+		typeof(MauiBlazorAutoB2cApp.Web.Client._Imports).Assembly);
 #endif
 
 
