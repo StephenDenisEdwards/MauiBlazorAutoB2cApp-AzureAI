@@ -46,6 +46,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MauiBlazorAutoB2cApp.Shared\MauiBlazorAutoB2cApp.Shared.csproj" />
     <ProjectReference Include="..\MauiBlazorAutoB2cApp.Web.Client\MauiBlazorAutoB2cApp.Web.Client.csproj" />
+    <ProjectReference Include="..\MauiBlazorAutoB2cApp-AzureAI.ServiceDefaults\MauiBlazorAutoB2cApp-AzureAI.ServiceDefaults.csproj" />
   </ItemGroup>
 
 </Project>

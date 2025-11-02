@@ -6,8 +6,12 @@ using MauiBlazorAutoB2cApp.Web.Components;
 using MauiBlazorAutoB2cApp.Web.Services;
 using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Abstractions;
+using Microsoft.Extensions.Hosting; // ServiceDefaults extensions
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Enable Aspire service defaults: telemetry, health checks, service discovery
+builder.AddServiceDefaults();
 
 // Add services to the container.
 /*
@@ -155,5 +159,7 @@ app.MapRazorComponents<App>()
 		typeof(MauiBlazorAutoB2cApp.Web.Client._Imports).Assembly);
 #endif
 
+// Map health endpoints in development (Aspire defaults)
+app.MapDefaultEndpoints();
 
 app.Run();

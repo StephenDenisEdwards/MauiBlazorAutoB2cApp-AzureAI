@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Identity.Web;
+using Microsoft.Extensions.Hosting; // ServiceDefaults extensions
 
 namespace WebApiWeather
 {
@@ -8,15 +9,11 @@ namespace WebApiWeather
 		public static void Main(string[] args)
 		{
 			var builder = WebApplication.CreateBuilder(args);
-			// Add an authentication scheme
-			// Add an authentication scheme
-			//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-			//	.AddMicrosoftIdentityWebApi(builder.Configuration);
 
-			//builder.Services
-			//	.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-			//	.AddMicrosoftIdentityWebApi(builder.Configuration);
+			// Aspire service defaults: telemetry, health checks, discovery
+			builder.AddServiceDefaults();
 
+			// Authentication and authorization
 			builder.Services
 				.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 				.AddMicrosoftIdentityWebApi(options =>
@@ -36,8 +33,6 @@ namespace WebApiWeather
 					policy.RequireAuthenticatedUser()
 						.RequireClaim("http://schemas.microsoft.com/identity/claims/scope", "Weather.ReadWrite"));
 			});
-
-
 
 			// Add services to the container.
 			builder.Services.AddControllers();
@@ -74,6 +69,9 @@ namespace WebApiWeather
 			app.UseAuthorization();
 
 			app.MapControllers();
+
+			// Map health endpoints in development (Aspire defaults)
+			app.MapDefaultEndpoints();
 
 			app.Run();
 		}
